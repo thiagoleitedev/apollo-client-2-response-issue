@@ -8,7 +8,7 @@ const httpLink = new HttpLink({ uri: "https://swapi.apis.guru" })
 const addStatusLink = new ApolloLink((operation, forward) => {
   return forward(operation).map((response) => {
     response.data.status = 'SUCCESS'
-    console.log('afterware', response)
+    console.log('afterware', JSON.stringify(response))
     return response;
   })
 })

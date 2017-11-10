@@ -1,14 +1,15 @@
 //@flow
 import { takeEvery } from 'redux-saga'
 import { SAGA_GET_STAR_WARS } from '~/app/reducers/Saga'
-import { getPeople } from '~/app/api/StarWars'
+import { getLuke } from '~/app/api/StarWars'
 import { apolloClient } from '~/app/Apollo'
 
 export function* perform(_a: Object): Generator<*, *, *> {
   const response = yield apolloClient.query({
-    query: getPeople,
+    query: getLuke,
+    variables: {id: 'cGVvcGxlOjE='}
   })
-  console.log('saga', response)
+  console.log('saga', JSON.stringify(response))
 }
 
 export function* watch(): Generator<*, *, *> {
