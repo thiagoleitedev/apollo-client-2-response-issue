@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+/flow-typed/npm
+/dist/app
+/dist/styles.css
+/dist/bundle.js
+npm-debug.log*
+coverage
+certs
+.env
+test-results.xml
+.vscode
